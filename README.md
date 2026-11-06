@@ -1,12 +1,23 @@
-# VetManager
+# 🐾 VetManager
 
-## Apresentação do projeto
+<p align="center">
+  <img src="https://img.shields.io/badge/VetManager-Gest%C3%A3o%20Veterin%C3%A1ria-E8A0BF?style=for-the-badge" alt="VetManager">
+  <img src="https://img.shields.io/badge/Projeto-Em%20desenvolvimento-C9A227?style=for-the-badge" alt="Projeto em desenvolvimento">
+</p>
+
+<p align="center">
+  🐶 Organização • 🐱 Cuidado • 💗 Tecnologia
+</p>
+
+---
+
+## 🌸 Apresentação do projeto
 
 O **VetManager** é um sistema web de gerenciamento veterinário em desenvolvimento, com a proposta de centralizar e organizar informações e processos relacionados à rotina de clínicas veterinárias.
 
 A plataforma pretende oferecer recursos para o gerenciamento de tutores, pacientes, consultas, prontuários clínicos, vacinação e usuários, contribuindo para uma gestão mais organizada e facilitando o acesso às informações importantes no acompanhamento dos animais.
 
-## Contextualização e justificativa
+## 🐾 Contextualização e justificativa
 
 A rotina de uma clínica veterinária envolve diferentes atividades que precisam funcionar de maneira integrada. Desde o cadastro de tutores e pacientes até o agendamento de consultas, registro de atendimentos, acompanhamento do histórico clínico e controle vacinal, existe um volume significativo de informações que precisa ser armazenado e consultado com organização.
 
@@ -15,3 +26,9 @@ A proposta do VetManager surgiu também a partir da minha própria experiência 
 Unindo essa vivência profissional ao meu processo de formação em Engenharia de Software, surgiu a ideia de desenvolver uma solução que associe conhecimentos da área veterinária aos recursos e às boas práticas do desenvolvimento de sistemas.
 
 Mais do que um projeto de portfólio, o VetManager representa a oportunidade de transformar uma necessidade observada na prática em uma solução tecnológica, aplicando conceitos de análise de requisitos, modelagem de dados, desenvolvimento backend e frontend, testes e documentação.
+
+---
+
+<p align="center">
+  💗 <strong>VetManager</strong> | Desenvolvido com propósito, cuidado e tecnologia. 🐾
+</p>
