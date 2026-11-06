@@ -36,5 +36,4 @@ Mais do que um projeto de portfólio, o VetManager representa a oportunidade de 
 ## 📄 Documentação
 
 O VetManager está em fase inicial de desenvolvimento, com os requisitos e as regras de negócio definidos para o MVP.
-
-[Documento de Requisitos — Versão 0.4](docs/requisitos-v0.4.pdf)
+[Documento de Requisitos — Versão 0.4](docs/DOCUMENTO%20DE%20REQUISITOS.pdf)
