@@ -1,0 +1,61 @@
+name: Validar fluxo de branches
+
+on:
+  push:
+    branches:
+      - 'feature/**'
+  pull_request:
+    branches:
+      - develop
+      - homol
+      - main
+    types: [opened, reopened, synchronize, edited, ready_for_review]
+
+permissions:
+  contents: read
+
+jobs:
+  validar-fluxo:
+    name: validar-fluxo
+    runs-on: ubuntu-latest
+    steps:
+      - name: Conferir origem e destino
+        shell: bash
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          REF_NAME: ${{ github.ref_name }}
+          HEAD_REF: ${{ github.head_ref }}
+          BASE_REF: ${{ github.base_ref }}
+          HEAD_REPO: ${{ github.event.pull_request.head.repo.full_name }}
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          if [[ "$EVENT_NAME" == "push" ]]; then
+            if [[ "$REF_NAME" == feature/* && "$REF_NAME" != "feature/" ]]; then
+              echo "Push de $REF_NAME validado."
+              exit 0
+            fi
+          elif [[ "$EVENT_NAME" == "pull_request" ]]; then
+            case "$BASE_REF" in
+              develop)
+                if [[ "$HEAD_REF" == feature/* && "$HEAD_REF" != "feature/" ]]; then
+                  echo "PR de $HEAD_REF para develop validado."
+                  exit 0
+                fi
+                ;;
+              homol)
+                if [[ "$HEAD_REF" == "develop" && "$HEAD_REPO" == "$REPOSITORY" ]]; then
+                  echo "PR de develop para homol validado."
+                  exit 0
+                fi
+                ;;
+              main)
+                if [[ "$HEAD_REF" == "homol" && "$HEAD_REPO" == "$REPOSITORY" ]]; then
+                  echo "PR de homol para main validado."
+                  exit 0
+                fi
+                ;;
+            esac
+          fi
+
+          echo "Fluxo invalido: evento=$EVENT_NAME, origem=$HEAD_REF, destino=$BASE_REF, ref=$REF_NAME."
+          exit 1
